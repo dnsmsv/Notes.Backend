@@ -2,8 +2,6 @@
 using Notes.Application.Interfaces;
 using Notes.Domain;
 using Notes.Persistence.EntityTypeConfigurations;
-using System.Threading;
-using System.Threading.Tasks;
 
 namespace Notes.Persistence
 {
@@ -20,11 +18,6 @@ namespace Notes.Persistence
         {
             modelBuilder.ApplyConfiguration(new NoteConfiguration());
             base.OnModelCreating(modelBuilder);
-        }
-
-        Task<Note> INotesDbContext.SaveChangesAsync(CancellationToken cancellationToken)
-        {
-            throw new System.NotImplementedException();
         }
     }
 }
